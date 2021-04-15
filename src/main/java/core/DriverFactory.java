@@ -16,12 +16,15 @@ public class DriverFactory {
 	private static AndroidDriver<MobileElement> initialize() throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("deviceName", "0057139280");
+		capabilities.setCapability("deviceName", "emulator-5554");
 		capabilities.setCapability("automationName", "uiAutomator2");
-		capabilities.setCapability("appPackage", "com.android.calculator2");
-		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
+		capabilities.setCapability("fullReset", "false");
+		capabilities.setCapability("noReset", "true");
+		capabilities.setCapability("app", "C:\\Users\\Windows 10\\Documents\\CTAppium_1_2.apk");
+		//capabilities.setCapability("appPackage", "");
+		//capabilities.setCapability("appActivity", "");
 		
-		driver= new AndroidDriver<MobileElement>(new URL("127.0.0.1:4723/wd/hub"),capabilities);
+		driver= new AndroidDriver<MobileElement>(new URL("http", "127.0.0.1", 4723, "/wd/hub"), capabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
@@ -31,7 +34,6 @@ public class DriverFactory {
 			try {
 				initialize();
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		return driver;

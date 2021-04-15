@@ -24,7 +24,7 @@ public class BasePage {
 	}
 	
 	public void write(By by, String text) {
-		getDriver().findElement(by).sendKeys("text");
+		getDriver().findElement(by).sendKeys(text);
 	}
 
 }

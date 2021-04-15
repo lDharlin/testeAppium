@@ -6,9 +6,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/main/resources/features/Calculator.feature",
+		features = "src/main/resources/features/Login.feature",
 		glue = "",
-		tags ="@soma")
+		tags ="@login")
 public class Runner {
 
 }
